@@ -46,4 +46,4 @@ function logActivity($pdo, $user_id, $user_email, $action, $status = 'success')
         return false;
     }
 }
-?>
+?>  

@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS activity_logs(
     -- Client Parameters
     activity_log_ip_address VARCHAR(45),
     activity_log_user_agent VARCHAR(255),
-    
+
     -- Timestamp
     activity_log_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -24,19 +24,17 @@ CREATE TABLE IF NOT EXISTS users(
     user_password VARCHAR(255) NOT NULL,
     user_role ENUM('admin','manager','user') NOT NULL DEFAULT 'user',
 
-    --USER CREATED TIMESTAMP DEFAULT NOT NULL   
-    user_created_at TIMESTAMP 
+    --USER CREATED TIMESTAMP DEFAULT NOT NULL
+    user_created_at TIMESTAMP
     DEFAULT CURRENT_TIMESTAMP,
 
     --USER UPDATED TIMESTAMP
     user_updated_at TIMESTAMP
-    DEFAULT CURRENT_TIMESTAMP 
+    DEFAULT CURRENT_TIMESTAMP
     ON UPDATE CURRENT_TIMESTAMP
-
-)
+);
 
 -- Insert query #1
-
 INSERT INTO users
 (
     user_email,

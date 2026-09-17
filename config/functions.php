@@ -1,4 +1,3 @@
-```php
 <?php
 
 function redirect($path){
@@ -90,4 +89,4 @@ function requireRole($role){
 }
 
 ?>
-```
+

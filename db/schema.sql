@@ -8,7 +8,56 @@ CREATE TABLE IF NOT EXISTS activity_logs(
     -- Client Parameters
     activity_log_ip_address VARCHAR(45),
     activity_log_user_agent VARCHAR(255),
-    
+
     -- Timestamp
     activity_log_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table #3 users tables
+CREATE TABLE IF NOT EXISTS users(
+    -- PRIMARY KEY FOR USERS TABLE
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    -- INITIAL USER DETAILS
+    user_email VARCHAR(50) UNIQUE NOT NULL,
+    user_username VARCHAR(20) UNIQUE NOT NULL,
+    user_password VARCHAR(255) NOT NULL,
+    user_role ENUM('admin','manager','user') NOT NULL DEFAULT 'user',
+
+    --USER CREATED TIMESTAMP DEFAULT NOT NULL
+    user_created_at TIMESTAMP
+    DEFAULT CURRENT_TIMESTAMP,
+
+    --USER UPDATED TIMESTAMP
+    user_updated_at TIMESTAMP
+    DEFAULT CURRENT_TIMESTAMP
+    ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Insert query #1
+INSERT INTO users
+(
+    user_email,
+    user_username,
+    user_password,
+    user_role
+)
+VALUES
+(
+    'admin@example.com',
+    'admin',
+    '$2y$10$HNfhClczEWBxcFuJwP53iu2Y75Tba7IEtmX8vX.1tp0dZ5EVt9CbO',
+    'admin'
+),
+(
+    'manager@example.com',
+    'manager',
+    '$2y$10$HNfhClczEWBxcFuJwP53iu2Y75Tba7IEtmX8vX.1tp0dZ5EVt9CbO',
+    'manager'
+),
+(
+    'user@example.com',
+    'user',
+    '$2y$10$HNfhClczEWBxcFuJwP53iu2Y75Tba7IEtmX8vX.1tp0dZ5EVt9CbO',
+    'user'
 );

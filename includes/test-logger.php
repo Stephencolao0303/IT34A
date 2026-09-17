@@ -20,4 +20,4 @@ if ($success) {
     echo "Failed to insert activity log.";
 }
 
-?>
+?>  

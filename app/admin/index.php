@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/../../config/config.php';
 
-require_once __DIR__ . '/../../config/functions.php';
-
 requireRole('admin');
 
 logActivity(
@@ -13,7 +11,7 @@ logActivity(
     'view_activity_logs'
 );
 
-# query #3 Get all activity logs
+// query #3 Get all activity logs
 
 $stmt = $pdo->query("
 
@@ -47,7 +45,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <h1>Hello Admin</h1>
 
-    <a href="../auth/signout.php">Sign Out</a>
+    <a href="<?php echo BASE_URL; ?>/auth/signout.php">Sign Out</a>
 
     <table border="1">
 
@@ -75,35 +73,35 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_id']) ?>
+                        <?= htmlspecialchars($activity['activity_log_id'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['user_id']) ?>
+                        <?= htmlspecialchars($activity['user_id'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['user_email']) ?>
+                        <?= htmlspecialchars($activity['user_email'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_action']) ?>
+                        <?= htmlspecialchars($activity['activity_log_action'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_status']) ?>
+                        <?= htmlspecialchars($activity['activity_log_status'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_ip_address']) ?>
+                        <?= htmlspecialchars($activity['activity_log_ip_address'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_user_agent']) ?>
+                        <?= htmlspecialchars($activity['activity_log_user_agent'] ?? '') ?>
                     </td>
 
                     <td>
-                        <?= htmlspecialchars($activity['activity_log_created_at']) ?>
+                        <?= htmlspecialchars($activity['activity_log_created_at'] ?? '') ?>
                     </td>
 
                 </tr>
@@ -114,6 +112,6 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     </table>
 
-</body> 
+</body>
 
 </html>

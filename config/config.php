@@ -12,7 +12,7 @@ define('BASE_URL', 'http://localhost/IT34A');
 
 define('DB_HOST', 'localhost');
 
-define('DB_NAME', 'it34a_lab_db');
+define('DB_NAME', 'it34a_db');
 
 define('DB_USER', 'root');
 

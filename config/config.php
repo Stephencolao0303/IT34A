@@ -7,16 +7,17 @@
     require_once __DIR__ . '/../functions/redirect.php';
     require_once __DIR__ . '/../functions/sessions.php';
     require_once __DIR__ . '/../functions/csrf.php';
+    require_once __DIR__ . '/../functions/csv.php';
     // define('','');
 
     define('BASE_URL', 'http://localhost/IT34A');
 
     define('DB_HOST', 'localhost');
 
-    define('DB_NAME', 'it34a_lab_db');
+    define('DB_NAME', 'it34a_lab_db1');
 
     define('DB_USER', 'root');
-
+    
     define('DB_PASS', '');
 
     $user_id = "root" ?? null;
